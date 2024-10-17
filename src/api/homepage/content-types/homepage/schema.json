@@ -1,0 +1,71 @@
+{
+  "kind": "singleType",
+  "collectionName": "homepages",
+  "info": {
+    "singularName": "homepage",
+    "pluralName": "homepages",
+    "displayName": "Homepage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Hero_section_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images", "files", "videos", "audios"]
+    },
+    "Why_choosing_title": {
+      "type": "string"
+    },
+    "Why_choosing_description": {
+      "type": "text"
+    },
+    "Why_choosing_cards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "card.why-choosing-card"
+    },
+    "Solution_title": {
+      "type": "string"
+    },
+    "Solution_description": {
+      "type": "text"
+    },
+    "Solution_card": {
+      "displayName": "solution",
+      "type": "component",
+      "repeatable": true,
+      "component": "card.solution"
+    },
+    "Employee_introduction_title": {
+      "type": "string"
+    },
+    "Employees": {
+      "type": "component",
+      "repeatable": true,
+      "component": "card.business-card"
+    },
+    "Location_title": {
+      "type": "string"
+    },
+    "Location_description": {
+      "type": "string"
+    },
+    "Location_card": {
+      "displayName": "location",
+      "type": "component",
+      "repeatable": true,
+      "component": "card.location"
+    },
+    "Review": {
+      "displayName": "Review",
+      "type": "component",
+      "repeatable": true,
+      "component": "dyob.review"
+    }
+  }
+}

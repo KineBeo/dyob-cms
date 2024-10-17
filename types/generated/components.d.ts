@@ -62,6 +62,64 @@ export interface SharedMedia extends Struct.ComponentSchema {
   };
 }
 
+export interface DyobReview extends Struct.ComponentSchema {
+  collectionName: 'components_dyob_reviews';
+  info: {
+    displayName: 'Review';
+  };
+  attributes: {
+    view_url: Schema.Attribute.String;
+    Title: Schema.Attribute.String;
+  };
+}
+
+export interface CardWhyChoosingCard extends Struct.ComponentSchema {
+  collectionName: 'components_card_why_choosing_cards';
+  info: {
+    displayName: 'Why choosing card';
+  };
+  attributes: {
+    Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Title: Schema.Attribute.String;
+  };
+}
+
+export interface CardSolution extends Struct.ComponentSchema {
+  collectionName: 'components_card_solutions';
+  info: {
+    displayName: 'solution';
+    description: '';
+  };
+  attributes: {
+    Icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Title: Schema.Attribute.String;
+  };
+}
+
+export interface CardLocation extends Struct.ComponentSchema {
+  collectionName: 'components_card_locations';
+  info: {
+    displayName: 'location';
+  };
+  attributes: {
+    Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Location: Schema.Attribute.String;
+    googlemap_url: Schema.Attribute.String;
+  };
+}
+
+export interface CardBusinessCard extends Struct.ComponentSchema {
+  collectionName: 'components_card_business_cards';
+  info: {
+    displayName: 'Business card';
+  };
+  attributes: {
+    Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Name: Schema.Attribute.String;
+    Position: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -70,6 +128,11 @@ declare module '@strapi/strapi' {
       'shared.rich-text': SharedRichText;
       'shared.quote': SharedQuote;
       'shared.media': SharedMedia;
+      'dyob.review': DyobReview;
+      'card.why-choosing-card': CardWhyChoosingCard;
+      'card.solution': CardSolution;
+      'card.location': CardLocation;
+      'card.business-card': CardBusinessCard;
     }
   }
 }
