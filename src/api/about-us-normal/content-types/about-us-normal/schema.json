@@ -4,7 +4,8 @@
   "info": {
     "singularName": "about-us-normal",
     "pluralName": "about-us-normals",
-    "displayName": "about-us-normal"
+    "displayName": "About-us-normal",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -24,27 +25,29 @@
       "type": "string"
     },
     "Company_image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "Legal_documents_title": {
       "type": "string"
     },
     "Legal_documents": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     }
   }
 }

@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_pane_benefit_panes",
+  "info": {
+    "displayName": "Benefit Pane"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Icon": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Reasons": {
+      "type": "richtext"
+    }
+  }
+}

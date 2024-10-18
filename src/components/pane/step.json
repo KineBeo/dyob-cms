@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_pane_steps",
+  "info": {
+    "displayName": "Step"
+  },
+  "options": {},
+  "attributes": {
+    "Content": {
+      "type": "string"
+    }
+  }
+}

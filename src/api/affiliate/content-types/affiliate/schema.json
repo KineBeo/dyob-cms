@@ -1,0 +1,49 @@
+{
+  "kind": "singleType",
+  "collectionName": "affiliates",
+  "info": {
+    "singularName": "affiliate",
+    "pluralName": "affiliates",
+    "displayName": "Affiliate",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Affiliate_program_title": {
+      "type": "string"
+    },
+    "Affiliate_program_description": {
+      "type": "text"
+    },
+    "Register_button_text": {
+      "type": "string"
+    },
+    "Benefits": {
+      "displayName": "Benefit Pane",
+      "type": "component",
+      "repeatable": true,
+      "component": "pane.benefit-pane"
+    },
+    "Steps": {
+      "displayName": "Step",
+      "type": "component",
+      "repeatable": true,
+      "component": "pane.step"
+    },
+    "Benefit_title": {
+      "type": "string"
+    },
+    "Benefit_description": {
+      "type": "text"
+    },
+    "How_to_join_title": {
+      "type": "string"
+    },
+    "How_to_join_description": {
+      "type": "string"
+    }
+  }
+}

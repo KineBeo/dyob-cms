@@ -485,40 +485,13 @@ export interface PluginUsersPermissionsUser
   };
 }
 
-export interface ApiAboutAbout extends Struct.SingleTypeSchema {
-  collectionName: 'abouts';
-  info: {
-    singularName: 'about';
-    pluralName: 'abouts';
-    displayName: 'About';
-    description: 'Write about yourself and the content you create';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    title: Schema.Attribute.String;
-    blocks: Schema.Attribute.DynamicZone<
-      ['shared.media', 'shared.quote', 'shared.rich-text', 'shared.slider']
-    >;
-    createdAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    publishedAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String;
-    localizations: Schema.Attribute.Relation<'oneToMany', 'api::about.about'>;
-  };
-}
-
 export interface ApiAboutUsNormalAboutUsNormal extends Struct.SingleTypeSchema {
   collectionName: 'about_us_normals';
   info: {
     singularName: 'about-us-normal';
     pluralName: 'about-us-normals';
-    displayName: 'about-us-normal';
+    displayName: 'About-us-normal';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -548,6 +521,42 @@ export interface ApiAboutUsNormalAboutUsNormal extends Struct.SingleTypeSchema {
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::about-us-normal.about-us-normal'
+    >;
+  };
+}
+
+export interface ApiAffiliateAffiliate extends Struct.SingleTypeSchema {
+  collectionName: 'affiliates';
+  info: {
+    singularName: 'affiliate';
+    pluralName: 'affiliates';
+    displayName: 'Affiliate';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Affiliate_program_title: Schema.Attribute.String;
+    Affiliate_program_description: Schema.Attribute.Text;
+    Register_button_text: Schema.Attribute.String;
+    Benefits: Schema.Attribute.Component<'pane.benefit-pane', true>;
+    Steps: Schema.Attribute.Component<'pane.step', true>;
+    Benefit_title: Schema.Attribute.String;
+    Benefit_description: Schema.Attribute.Text;
+    How_to_join_title: Schema.Attribute.String;
+    How_to_join_description: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::affiliate.affiliate'
     >;
   };
 }
@@ -654,12 +663,42 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiPaymentPayment extends Struct.SingleTypeSchema {
+  collectionName: 'payments';
+  info: {
+    singularName: 'payment';
+    pluralName: 'payments';
+    displayName: 'Payment';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Description: Schema.Attribute.Text;
+    Bank_account_info: Schema.Attribute.RichText;
+    QR_code: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::payment.payment'
+    >;
+  };
+}
+
 export interface ApiProductProduct extends Struct.CollectionTypeSchema {
   collectionName: 'products';
   info: {
     singularName: 'product';
     pluralName: 'products';
     displayName: 'Product';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -668,7 +707,6 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     Name: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
-    Description: Schema.Attribute.Text;
     Price: Schema.Attribute.BigInteger & Schema.Attribute.Required;
     Main_image: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
@@ -677,7 +715,11 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
       'images' | 'files' | 'videos' | 'audios',
       true
     >;
-    Instock: Schema.Attribute.Boolean;
+    Product_details: Schema.Attribute.RichText;
+    Product_details_title: Schema.Attribute.String;
+    slug: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -1068,11 +1110,12 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
-      'api::about.about': ApiAboutAbout;
       'api::about-us-normal.about-us-normal': ApiAboutUsNormalAboutUsNormal;
+      'api::affiliate.affiliate': ApiAffiliateAffiliate;
       'api::employee.employee': ApiEmployeeEmployee;
       'api::global.global': ApiGlobalGlobal;
       'api::homepage.homepage': ApiHomepageHomepage;
+      'api::payment.payment': ApiPaymentPayment;
       'api::product.product': ApiProductProduct;
       'admin::permission': AdminPermission;
       'admin::user': AdminUser;
