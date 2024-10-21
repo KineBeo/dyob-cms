@@ -16,7 +16,12 @@
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": ["images", "files", "videos", "audios"]
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     },
     "Why_choosing_title": {
       "type": "string"
@@ -66,6 +71,15 @@
       "type": "component",
       "repeatable": true,
       "component": "dyob.review"
+    },
+    "Services_title": {
+      "type": "string"
+    },
+    "services_content": {
+      "displayName": "service",
+      "type": "component",
+      "repeatable": true,
+      "component": "pane.service"
     }
   }
 }
