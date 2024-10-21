@@ -1,0 +1,53 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_us_normals",
+  "info": {
+    "singularName": "about-us-normal",
+    "pluralName": "about-us-normals",
+    "displayName": "About-us-normal",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Introduction_title": {
+      "type": "string"
+    },
+    "Introduction_description": {
+      "type": "text"
+    },
+    "Vision_title_mission": {
+      "type": "string"
+    },
+    "Company_image_title": {
+      "type": "string"
+    },
+    "Company_image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Legal_documents_title": {
+      "type": "string"
+    },
+    "Legal_documents": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

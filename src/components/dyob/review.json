@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_dyob_reviews",
+  "info": {
+    "displayName": "Review"
+  },
+  "options": {},
+  "attributes": {
+    "view_url": {
+      "type": "string"
+    },
+    "Title": {
+      "type": "string"
+    }
+  }
+}

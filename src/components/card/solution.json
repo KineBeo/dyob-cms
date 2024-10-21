@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_card_solutions",
+  "info": {
+    "displayName": "solution",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Icon": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Title": {
+      "type": "string"
+    }
+  }
+}

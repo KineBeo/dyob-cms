@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_dyob_slides",
+  "info": {
+    "displayName": "slide",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "First_short_text": {
+      "type": "string"
+    },
+    "Last_short_text": {
+      "type": "string"
+    },
+    "Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

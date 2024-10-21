@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_card_locations",
+  "info": {
+    "displayName": "location"
+  },
+  "options": {},
+  "attributes": {
+    "Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Location": {
+      "type": "string"
+    },
+    "googlemap_url": {
+      "type": "string"
+    }
+  }
+}
