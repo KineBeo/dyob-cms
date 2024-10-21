@@ -675,6 +675,8 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
     Location_description: Schema.Attribute.String;
     Location_card: Schema.Attribute.Component<'card.location', true>;
     Review: Schema.Attribute.Component<'dyob.review', true>;
+    Services_title: Schema.Attribute.String;
+    services_content: Schema.Attribute.Component<'pane.service', true>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -687,6 +689,32 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
       'oneToMany',
       'api::homepage.homepage'
     >;
+  };
+}
+
+export interface ApiLoginLogin extends Struct.SingleTypeSchema {
+  collectionName: 'logins';
+  info: {
+    singularName: 'login';
+    pluralName: 'logins';
+    displayName: 'Login';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Welcome_text: Schema.Attribute.String;
+    Legal_and_condition: Schema.Attribute.RichText;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::login.login'>;
   };
 }
 
@@ -1167,6 +1195,7 @@ declare module '@strapi/strapi' {
       'api::employee.employee': ApiEmployeeEmployee;
       'api::global.global': ApiGlobalGlobal;
       'api::homepage.homepage': ApiHomepageHomepage;
+      'api::login.login': ApiLoginLogin;
       'api::logo.logo': ApiLogoLogo;
       'api::payment.payment': ApiPaymentPayment;
       'api::product.product': ApiProductProduct;

@@ -72,6 +72,18 @@ export interface PaneStep extends Struct.ComponentSchema {
   };
 }
 
+export interface PaneService extends Struct.ComponentSchema {
+  collectionName: 'components_pane_services';
+  info: {
+    displayName: 'service';
+  };
+  attributes: {
+    Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Title: Schema.Attribute.String;
+    Description: Schema.Attribute.Text;
+  };
+}
+
 export interface PaneBenefitPane extends Struct.ComponentSchema {
   collectionName: 'components_pane_benefit_panes';
   info: {
@@ -164,6 +176,7 @@ declare module '@strapi/strapi' {
       'shared.quote': SharedQuote;
       'shared.media': SharedMedia;
       'pane.step': PaneStep;
+      'pane.service': PaneService;
       'pane.benefit-pane': PaneBenefitPane;
       'dyob.slide': DyobSlide;
       'dyob.review': DyobReview;
