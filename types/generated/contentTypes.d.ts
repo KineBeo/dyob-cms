@@ -800,7 +800,16 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     Product_details_title: Schema.Attribute.String;
     slug: Schema.Attribute.UID<'Name'>;
     filter: Schema.Attribute.Enumeration<
-      ['Th\u1EA7n kinh', 'X\u01B0\u01A1ng kh\u1EDBp', 'Ti\u00EAu h\u00F3a']
+      [
+        'than-kinh',
+        'xuong-khop',
+        'tieu-hoa',
+        'ho-hap',
+        'tim-mach',
+        'than-tiet-nieu',
+        'tai-mui-hong',
+        'da-lieu',
+      ]
     >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;

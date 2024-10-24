@@ -56,9 +56,14 @@
     "filter": {
       "type": "enumeration",
       "enum": [
-        "Thần kinh",
-        "Xương khớp",
-        "Tiêu hóa"
+        "than-kinh",
+        "xuong-khop",
+        "tieu-hoa",
+        "ho-hap",
+        "tim-mach",
+        "than-tiet-nieu",
+        "tai-mui-hong",
+        "da-lieu"
       ]
     }
   }
