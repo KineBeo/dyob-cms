@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-10-24T09:26:24.684Z"
+    "x-generation-date": "2024-10-24T09:42:46.288Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -12944,6 +12944,14 @@
               "slug": {
                 "type": "string"
               },
+              "filter": {
+                "type": "string",
+                "enum": [
+                  "Thần kinh",
+                  "Xương khớp",
+                  "Tiêu hóa"
+                ]
+              },
               "locale": {
                 "type": "string"
               },
@@ -13760,6 +13768,14 @@
           "slug": {
             "type": "string"
           },
+          "filter": {
+            "type": "string",
+            "enum": [
+              "Thần kinh",
+              "Xương khớp",
+              "Tiêu hóa"
+            ]
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -14085,6 +14101,14 @@
                 },
                 "slug": {
                   "type": "string"
+                },
+                "filter": {
+                  "type": "string",
+                  "enum": [
+                    "Thần kinh",
+                    "Xương khớp",
+                    "Tiêu hóa"
+                  ]
                 },
                 "createdAt": {
                   "type": "string",
