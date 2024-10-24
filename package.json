@@ -6,13 +6,14 @@
   "scripts": {
     "build": "strapi build",
     "deploy": "strapi deploy",
-    "develop": "strapi develop",
+    "dev": "strapi develop",
     "seed:example": "node ./scripts/seed.js",
     "start": "strapi start",
     "strapi": "strapi"
   },
   "dependencies": {
     "@strapi/plugin-cloud": "5.0.6",
+    "@strapi/plugin-documentation": "^5.1.1",
     "@strapi/plugin-users-permissions": "5.0.6",
     "@strapi/provider-upload-cloudinary": "^5.1.0",
     "@strapi/strapi": "5.0.6",

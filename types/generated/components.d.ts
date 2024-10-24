@@ -62,6 +62,30 @@ export interface SharedMedia extends Struct.ComponentSchema {
   };
 }
 
+export interface DyobSlide extends Struct.ComponentSchema {
+  collectionName: 'components_dyob_slides';
+  info: {
+    displayName: 'slide';
+    description: '';
+  };
+  attributes: {
+    First_short_text: Schema.Attribute.String;
+    Last_short_text: Schema.Attribute.String;
+    Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface DyobReview extends Struct.ComponentSchema {
+  collectionName: 'components_dyob_reviews';
+  info: {
+    displayName: 'Review';
+  };
+  attributes: {
+    view_url: Schema.Attribute.String;
+    Title: Schema.Attribute.String;
+  };
+}
+
 export interface PaneStep extends Struct.ComponentSchema {
   collectionName: 'components_pane_steps';
   info: {
@@ -93,30 +117,6 @@ export interface PaneBenefitPane extends Struct.ComponentSchema {
     Title: Schema.Attribute.String;
     Icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     Reasons: Schema.Attribute.RichText;
-  };
-}
-
-export interface DyobSlide extends Struct.ComponentSchema {
-  collectionName: 'components_dyob_slides';
-  info: {
-    displayName: 'slide';
-    description: '';
-  };
-  attributes: {
-    First_short_text: Schema.Attribute.String;
-    Last_short_text: Schema.Attribute.String;
-    Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-  };
-}
-
-export interface DyobReview extends Struct.ComponentSchema {
-  collectionName: 'components_dyob_reviews';
-  info: {
-    displayName: 'Review';
-  };
-  attributes: {
-    view_url: Schema.Attribute.String;
-    Title: Schema.Attribute.String;
   };
 }
 
@@ -175,11 +175,11 @@ declare module '@strapi/strapi' {
       'shared.rich-text': SharedRichText;
       'shared.quote': SharedQuote;
       'shared.media': SharedMedia;
+      'dyob.slide': DyobSlide;
+      'dyob.review': DyobReview;
       'pane.step': PaneStep;
       'pane.service': PaneService;
       'pane.benefit-pane': PaneBenefitPane;
-      'dyob.slide': DyobSlide;
-      'dyob.review': DyobReview;
       'card.why-choosing-card': CardWhyChoosingCard;
       'card.solution': CardSolution;
       'card.location': CardLocation;
