@@ -52,6 +52,14 @@
     "slug": {
       "type": "uid",
       "targetField": "Name"
+    },
+    "filter": {
+      "type": "enumeration",
+      "enum": [
+        "Thần kinh",
+        "Xương khớp",
+        "Tiêu hóa"
+      ]
     }
   }
 }

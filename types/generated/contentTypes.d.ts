@@ -799,6 +799,9 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     Product_details: Schema.Attribute.RichText;
     Product_details_title: Schema.Attribute.String;
     slug: Schema.Attribute.UID<'Name'>;
+    filter: Schema.Attribute.Enumeration<
+      ['Th\u1EA7n kinh', 'X\u01B0\u01A1ng kh\u1EDBp', 'Ti\u00EAu h\u00F3a']
+    >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
