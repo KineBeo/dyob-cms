@@ -25,23 +25,13 @@
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
+      "allowedTypes": ["images", "files", "videos", "audios"]
     },
     "Sub_images": {
       "type": "media",
       "multiple": true,
       "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
+      "allowedTypes": ["images", "files", "videos", "audios"]
     },
     "Product_details": {
       "type": "richtext"
@@ -59,11 +49,10 @@
         "than-kinh",
         "xuong-khop",
         "tieu-hoa",
-        "ho-hap",
         "tim-mach",
+        "tram-cam",
         "than-tiet-nieu",
-        "tai-mui-hong",
-        "da-lieu"
+        "noi-tiet"
       ]
     }
   }
