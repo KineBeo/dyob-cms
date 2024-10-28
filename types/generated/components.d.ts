@@ -96,6 +96,30 @@ export interface PaneBenefitPane extends Struct.ComponentSchema {
   };
 }
 
+export interface DyobSlide extends Struct.ComponentSchema {
+  collectionName: 'components_dyob_slides';
+  info: {
+    displayName: 'slide';
+    description: '';
+  };
+  attributes: {
+    First_short_text: Schema.Attribute.String;
+    Last_short_text: Schema.Attribute.String;
+    Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface DyobReview extends Struct.ComponentSchema {
+  collectionName: 'components_dyob_reviews';
+  info: {
+    displayName: 'Review';
+  };
+  attributes: {
+    view_url: Schema.Attribute.String;
+    Title: Schema.Attribute.String;
+  };
+}
+
 export interface CardWhyChoosingCard extends Struct.ComponentSchema {
   collectionName: 'components_card_why_choosing_cards';
   info: {
@@ -143,30 +167,6 @@ export interface CardBusinessCard extends Struct.ComponentSchema {
   };
 }
 
-export interface DyobSlide extends Struct.ComponentSchema {
-  collectionName: 'components_dyob_slides';
-  info: {
-    displayName: 'slide';
-    description: '';
-  };
-  attributes: {
-    First_short_text: Schema.Attribute.String;
-    Last_short_text: Schema.Attribute.String;
-    Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-  };
-}
-
-export interface DyobReview extends Struct.ComponentSchema {
-  collectionName: 'components_dyob_reviews';
-  info: {
-    displayName: 'Review';
-  };
-  attributes: {
-    view_url: Schema.Attribute.String;
-    Title: Schema.Attribute.String;
-  };
-}
-
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -178,12 +178,12 @@ declare module '@strapi/strapi' {
       'pane.step': PaneStep;
       'pane.service': PaneService;
       'pane.benefit-pane': PaneBenefitPane;
+      'dyob.slide': DyobSlide;
+      'dyob.review': DyobReview;
       'card.why-choosing-card': CardWhyChoosingCard;
       'card.solution': CardSolution;
       'card.location': CardLocation;
       'card.business-card': CardBusinessCard;
-      'dyob.slide': DyobSlide;
-      'dyob.review': DyobReview;
     }
   }
 }

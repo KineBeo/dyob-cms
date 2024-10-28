@@ -588,6 +588,37 @@ export interface ApiAffiliateAffiliate extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
+  collectionName: 'articles';
+  info: {
+    singularName: 'article';
+    pluralName: 'articles';
+    displayName: 'Article';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    quote: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    content: Schema.Attribute.RichText;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::article.article'
+    >;
+  };
+}
+
 export interface ApiEmployeeEmployee extends Struct.CollectionTypeSchema {
   collectionName: 'employees';
   info: {
@@ -804,11 +835,10 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
         'than-kinh',
         'xuong-khop',
         'tieu-hoa',
-        'ho-hap',
         'tim-mach',
+        'tram-cam',
         'than-tiet-nieu',
-        'tai-mui-hong',
-        'da-lieu',
+        'noi-tiet',
       ]
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -1204,6 +1234,7 @@ declare module '@strapi/strapi' {
       'api::about-us.about-us': ApiAboutUsAboutUs;
       'api::about-us-normal.about-us-normal': ApiAboutUsNormalAboutUsNormal;
       'api::affiliate.affiliate': ApiAffiliateAffiliate;
+      'api::article.article': ApiArticleArticle;
       'api::employee.employee': ApiEmployeeEmployee;
       'api::global.global': ApiGlobalGlobal;
       'api::homepage.homepage': ApiHomepageHomepage;
