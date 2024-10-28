@@ -605,7 +605,7 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
     quote: Schema.Attribute.Text;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     content: Schema.Attribute.RichText;
-    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    seoUrl: Schema.Attribute.UID<'name'>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;

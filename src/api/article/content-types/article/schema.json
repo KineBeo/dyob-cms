@@ -35,10 +35,9 @@
     "content": {
       "type": "richtext"
     },
-    "slug": {
+    "seoUrl": {
       "type": "uid",
-      "targetField": "title",
-      "required": true
+      "targetField": "name"
     }
   }
 }
