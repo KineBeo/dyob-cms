@@ -594,14 +594,15 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
     singularName: 'article';
     pluralName: 'articles';
     displayName: 'Article';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     name: Schema.Attribute.String;
-    title: Schema.Attribute.String;
-    quote: Schema.Attribute.String;
+    title: Schema.Attribute.Text;
+    quote: Schema.Attribute.Text;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     content: Schema.Attribute.RichText;
     createdAt: Schema.Attribute.DateTime;
