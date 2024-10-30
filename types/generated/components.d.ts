@@ -1,5 +1,39 @@
 import type { Struct, Schema } from '@strapi/strapi';
 
+export interface PaneStep extends Struct.ComponentSchema {
+  collectionName: 'components_pane_steps';
+  info: {
+    displayName: 'Step';
+  };
+  attributes: {
+    Content: Schema.Attribute.String;
+  };
+}
+
+export interface PaneService extends Struct.ComponentSchema {
+  collectionName: 'components_pane_services';
+  info: {
+    displayName: 'service';
+  };
+  attributes: {
+    Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Title: Schema.Attribute.String;
+    Description: Schema.Attribute.Text;
+  };
+}
+
+export interface PaneBenefitPane extends Struct.ComponentSchema {
+  collectionName: 'components_pane_benefit_panes';
+  info: {
+    displayName: 'Benefit Pane';
+  };
+  attributes: {
+    Title: Schema.Attribute.String;
+    Icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Reasons: Schema.Attribute.RichText;
+  };
+}
+
 export interface SharedSlider extends Struct.ComponentSchema {
   collectionName: 'components_shared_sliders';
   info: {
@@ -59,40 +93,6 @@ export interface SharedMedia extends Struct.ComponentSchema {
   };
   attributes: {
     file: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
-  };
-}
-
-export interface PaneStep extends Struct.ComponentSchema {
-  collectionName: 'components_pane_steps';
-  info: {
-    displayName: 'Step';
-  };
-  attributes: {
-    Content: Schema.Attribute.String;
-  };
-}
-
-export interface PaneService extends Struct.ComponentSchema {
-  collectionName: 'components_pane_services';
-  info: {
-    displayName: 'service';
-  };
-  attributes: {
-    Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    Title: Schema.Attribute.String;
-    Description: Schema.Attribute.Text;
-  };
-}
-
-export interface PaneBenefitPane extends Struct.ComponentSchema {
-  collectionName: 'components_pane_benefit_panes';
-  info: {
-    displayName: 'Benefit Pane';
-  };
-  attributes: {
-    Title: Schema.Attribute.String;
-    Icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    Reasons: Schema.Attribute.RichText;
   };
 }
 
@@ -170,14 +170,14 @@ export interface CardBusinessCard extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'pane.step': PaneStep;
+      'pane.service': PaneService;
+      'pane.benefit-pane': PaneBenefitPane;
       'shared.slider': SharedSlider;
       'shared.seo': SharedSeo;
       'shared.rich-text': SharedRichText;
       'shared.quote': SharedQuote;
       'shared.media': SharedMedia;
-      'pane.step': PaneStep;
-      'pane.service': PaneService;
-      'pane.benefit-pane': PaneBenefitPane;
       'dyob.slide': DyobSlide;
       'dyob.review': DyobReview;
       'card.why-choosing-card': CardWhyChoosingCard;

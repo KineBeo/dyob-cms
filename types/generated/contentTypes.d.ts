@@ -621,6 +621,34 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
+  collectionName: 'categories';
+  info: {
+    singularName: 'category';
+    pluralName: 'categories';
+    displayName: 'Category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Schema.Attribute.String;
+    slug: Schema.Attribute.UID<'name'>;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::category.category'
+    >;
+  };
+}
+
 export interface ApiEmployeeEmployee extends Struct.CollectionTypeSchema {
   collectionName: 'employees';
   info: {
@@ -832,17 +860,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     Product_details: Schema.Attribute.RichText;
     Product_details_title: Schema.Attribute.String;
     slug: Schema.Attribute.UID<'Name'>;
-    filter: Schema.Attribute.Enumeration<
-      [
-        'than-kinh',
-        'xuong-khop',
-        'tieu-hoa',
-        'tim-mach',
-        'tram-cam',
-        'than-tiet-nieu',
-        'noi-tiet',
-      ]
-    >;
+    category: Schema.Attribute.Relation<'oneToOne', 'api::category.category'>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -1237,6 +1255,7 @@ declare module '@strapi/strapi' {
       'api::about-us-normal.about-us-normal': ApiAboutUsNormalAboutUsNormal;
       'api::affiliate.affiliate': ApiAffiliateAffiliate;
       'api::article.article': ApiArticleArticle;
+      'api::category.category': ApiCategoryCategory;
       'api::employee.employee': ApiEmployeeEmployee;
       'api::global.global': ApiGlobalGlobal;
       'api::homepage.homepage': ApiHomepageHomepage;

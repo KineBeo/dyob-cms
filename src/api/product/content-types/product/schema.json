@@ -25,13 +25,23 @@
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": ["images", "files", "videos", "audios"]
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     },
     "Sub_images": {
       "type": "media",
       "multiple": true,
       "required": false,
-      "allowedTypes": ["images", "files", "videos", "audios"]
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     },
     "Product_details": {
       "type": "richtext"
@@ -43,17 +53,10 @@
       "type": "uid",
       "targetField": "Name"
     },
-    "filter": {
-      "type": "enumeration",
-      "enum": [
-        "than-kinh",
-        "xuong-khop",
-        "tieu-hoa",
-        "tim-mach",
-        "tram-cam",
-        "than-tiet-nieu",
-        "noi-tiet"
-      ]
+    "category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::category.category"
     }
   }
 }
