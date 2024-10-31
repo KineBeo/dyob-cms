@@ -1,39 +1,5 @@
 import type { Struct, Schema } from '@strapi/strapi';
 
-export interface PaneStep extends Struct.ComponentSchema {
-  collectionName: 'components_pane_steps';
-  info: {
-    displayName: 'Step';
-  };
-  attributes: {
-    Content: Schema.Attribute.String;
-  };
-}
-
-export interface PaneService extends Struct.ComponentSchema {
-  collectionName: 'components_pane_services';
-  info: {
-    displayName: 'service';
-  };
-  attributes: {
-    Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    Title: Schema.Attribute.String;
-    Description: Schema.Attribute.Text;
-  };
-}
-
-export interface PaneBenefitPane extends Struct.ComponentSchema {
-  collectionName: 'components_pane_benefit_panes';
-  info: {
-    displayName: 'Benefit Pane';
-  };
-  attributes: {
-    Title: Schema.Attribute.String;
-    Icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    Reasons: Schema.Attribute.RichText;
-  };
-}
-
 export interface SharedSlider extends Struct.ComponentSchema {
   collectionName: 'components_shared_sliders';
   info: {
@@ -120,6 +86,40 @@ export interface DyobReview extends Struct.ComponentSchema {
   };
 }
 
+export interface PaneStep extends Struct.ComponentSchema {
+  collectionName: 'components_pane_steps';
+  info: {
+    displayName: 'Step';
+  };
+  attributes: {
+    Content: Schema.Attribute.String;
+  };
+}
+
+export interface PaneService extends Struct.ComponentSchema {
+  collectionName: 'components_pane_services';
+  info: {
+    displayName: 'service';
+  };
+  attributes: {
+    Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Title: Schema.Attribute.String;
+    Description: Schema.Attribute.Text;
+  };
+}
+
+export interface PaneBenefitPane extends Struct.ComponentSchema {
+  collectionName: 'components_pane_benefit_panes';
+  info: {
+    displayName: 'Benefit Pane';
+  };
+  attributes: {
+    Title: Schema.Attribute.String;
+    Icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Reasons: Schema.Attribute.RichText;
+  };
+}
+
 export interface CardWhyChoosingCard extends Struct.ComponentSchema {
   collectionName: 'components_card_why_choosing_cards';
   info: {
@@ -170,9 +170,6 @@ export interface CardBusinessCard extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
-      'pane.step': PaneStep;
-      'pane.service': PaneService;
-      'pane.benefit-pane': PaneBenefitPane;
       'shared.slider': SharedSlider;
       'shared.seo': SharedSeo;
       'shared.rich-text': SharedRichText;
@@ -180,6 +177,9 @@ declare module '@strapi/strapi' {
       'shared.media': SharedMedia;
       'dyob.slide': DyobSlide;
       'dyob.review': DyobReview;
+      'pane.step': PaneStep;
+      'pane.service': PaneService;
+      'pane.benefit-pane': PaneBenefitPane;
       'card.why-choosing-card': CardWhyChoosingCard;
       'card.solution': CardSolution;
       'card.location': CardLocation;
