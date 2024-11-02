@@ -46,9 +46,6 @@
     "Product_details": {
       "type": "richtext"
     },
-    "Product_details_title": {
-      "type": "string"
-    },
     "slug": {
       "type": "uid",
       "targetField": "Name"
@@ -57,6 +54,9 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::category.category"
+    },
+    "stock": {
+      "type": "integer"
     }
   }
 }

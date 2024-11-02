@@ -858,9 +858,9 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
       true
     >;
     Product_details: Schema.Attribute.RichText;
-    Product_details_title: Schema.Attribute.String;
     slug: Schema.Attribute.UID<'Name'>;
     category: Schema.Attribute.Relation<'oneToOne', 'api::category.category'>;
+    stock: Schema.Attribute.Integer;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
