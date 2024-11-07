@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_pane_visions",
+  "info": {
+    "displayName": "vision"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    }
+  }
+}

@@ -48,6 +48,15 @@
         "videos",
         "audios"
       ]
+    },
+    "mission": {
+      "type": "text"
+    },
+    "visons": {
+      "displayName": "vision",
+      "type": "component",
+      "repeatable": true,
+      "component": "pane.vision"
     }
   }
 }

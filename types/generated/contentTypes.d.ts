@@ -537,6 +537,8 @@ export interface ApiAboutUsNormalAboutUsNormal extends Struct.SingleTypeSchema {
       'images' | 'files' | 'videos' | 'audios',
       true
     >;
+    mission: Schema.Attribute.Text;
+    visons: Schema.Attribute.Component<'pane.vision', true>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;

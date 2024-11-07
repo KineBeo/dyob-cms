@@ -62,6 +62,17 @@ export interface SharedMedia extends Struct.ComponentSchema {
   };
 }
 
+export interface PaneVision extends Struct.ComponentSchema {
+  collectionName: 'components_pane_visions';
+  info: {
+    displayName: 'vision';
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+    description: Schema.Attribute.RichText;
+  };
+}
+
 export interface PaneStep extends Struct.ComponentSchema {
   collectionName: 'components_pane_steps';
   info: {
@@ -175,6 +186,7 @@ declare module '@strapi/strapi' {
       'shared.rich-text': SharedRichText;
       'shared.quote': SharedQuote;
       'shared.media': SharedMedia;
+      'pane.vision': PaneVision;
       'pane.step': PaneStep;
       'pane.service': PaneService;
       'pane.benefit-pane': PaneBenefitPane;
