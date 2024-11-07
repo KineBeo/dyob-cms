@@ -526,7 +526,6 @@ export interface ApiAboutUsNormalAboutUsNormal extends Struct.SingleTypeSchema {
   attributes: {
     Introduction_title: Schema.Attribute.String;
     Introduction_description: Schema.Attribute.Text;
-    Vision_title_mission: Schema.Attribute.String;
     Company_image_title: Schema.Attribute.String;
     Company_image: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
@@ -537,8 +536,10 @@ export interface ApiAboutUsNormalAboutUsNormal extends Struct.SingleTypeSchema {
       'images' | 'files' | 'videos' | 'audios',
       true
     >;
-    visons: Schema.Attribute.Component<'pane.vision', true>;
-    missions: Schema.Attribute.Component<'pane.mission', true>;
+    vision_title: Schema.Attribute.String;
+    mission_title: Schema.Attribute.String;
+    visions: Schema.Attribute.Component<'pane.visions', false>;
+    missions: Schema.Attribute.Component<'pane.missions', true>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;

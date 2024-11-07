@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_shared_short_texts",
+  "info": {
+    "displayName": "Short text"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "text"
+    }
+  }
+}

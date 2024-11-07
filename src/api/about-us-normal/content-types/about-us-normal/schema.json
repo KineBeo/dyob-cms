@@ -18,9 +18,6 @@
     "Introduction_description": {
       "type": "text"
     },
-    "Vision_title_mission": {
-      "type": "string"
-    },
     "Company_image_title": {
       "type": "string"
     },
@@ -49,17 +46,23 @@
         "audios"
       ]
     },
-    "visons": {
-      "displayName": "vision",
+    "vision_title": {
+      "type": "string"
+    },
+    "mission_title": {
+      "type": "string"
+    },
+    "visions": {
+      "displayName": "visions",
       "type": "component",
-      "repeatable": true,
-      "component": "pane.vision"
+      "repeatable": false,
+      "component": "pane.visions"
     },
     "missions": {
-      "displayName": "mission",
+      "displayName": "missions",
       "type": "component",
       "repeatable": true,
-      "component": "pane.mission"
+      "component": "pane.missions"
     }
   }
 }

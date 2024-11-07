@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-11-07T08:36:41.076Z"
+    "x-generation-date": "2024-11-07T09:32:40.525Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -6463,9 +6463,6 @@
               "Introduction_description": {
                 "type": "string"
               },
-              "Vision_title_mission": {
-                "type": "string"
-              },
               "Company_image_title": {
                 "type": "string"
               },
@@ -6500,16 +6497,19 @@
                   "example": "string or id"
                 }
               },
-              "visons": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/PaneVisionComponent"
-                }
+              "vision_title": {
+                "type": "string"
+              },
+              "mission_title": {
+                "type": "string"
+              },
+              "visions": {
+                "$ref": "#/components/schemas/PaneVisionsComponent"
               },
               "missions": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/PaneMissionComponent"
+                  "$ref": "#/components/schemas/PaneMissionsComponent"
                 }
               },
               "locale": {
@@ -6581,9 +6581,6 @@
             "type": "string"
           },
           "Introduction_description": {
-            "type": "string"
-          },
-          "Vision_title_mission": {
             "type": "string"
           },
           "Company_image_title": {
@@ -7325,16 +7322,19 @@
               }
             }
           },
-          "visons": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/PaneVisionComponent"
-            }
+          "vision_title": {
+            "type": "string"
+          },
+          "mission_title": {
+            "type": "string"
+          },
+          "visions": {
+            "$ref": "#/components/schemas/PaneVisionsComponent"
           },
           "missions": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/PaneMissionComponent"
+              "$ref": "#/components/schemas/PaneMissionsComponent"
             }
           },
           "createdAt": {
@@ -7389,9 +7389,6 @@
                   "type": "string"
                 },
                 "Introduction_description": {
-                  "type": "string"
-                },
-                "Vision_title_mission": {
                   "type": "string"
                 },
                 "Company_image_title": {
@@ -7664,16 +7661,19 @@
                     }
                   }
                 },
-                "visons": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/PaneVisionComponent"
-                  }
+                "vision_title": {
+                  "type": "string"
+                },
+                "mission_title": {
+                  "type": "string"
+                },
+                "visions": {
+                  "$ref": "#/components/schemas/PaneVisionsComponent"
                 },
                 "missions": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/PaneMissionComponent"
+                    "$ref": "#/components/schemas/PaneMissionsComponent"
                   }
                 },
                 "createdAt": {
@@ -7743,21 +7743,18 @@
           }
         }
       },
-      "PaneVisionComponent": {
+      "SharedShortTextComponent": {
         "type": "object",
         "properties": {
           "id": {
             "type": "number"
           },
-          "title": {
-            "type": "string"
-          },
-          "description": {
+          "text": {
             "type": "string"
           }
         }
       },
-      "PaneMissionComponent": {
+      "PaneVisionsComponent": {
         "type": "object",
         "properties": {
           "id": {
@@ -7766,8 +7763,28 @@
           "title": {
             "type": "string"
           },
-          "description": {
+          "text": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SharedShortTextComponent"
+            }
+          }
+        }
+      },
+      "PaneMissionsComponent": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "title": {
             "type": "string"
+          },
+          "text": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SharedShortTextComponent"
+            }
           }
         }
       },

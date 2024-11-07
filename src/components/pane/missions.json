@@ -1,15 +1,17 @@
 {
   "collectionName": "components_pane_missions",
   "info": {
-    "displayName": "mission"
+    "displayName": "missions"
   },
   "options": {},
   "attributes": {
     "title": {
       "type": "string"
     },
-    "description": {
-      "type": "richtext"
+    "text": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.short-text"
     }
   }
 }

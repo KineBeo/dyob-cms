@@ -12,6 +12,16 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedShortText extends Struct.ComponentSchema {
+  collectionName: 'components_shared_short_texts';
+  info: {
+    displayName: 'Short text';
+  };
+  attributes: {
+    text: Schema.Attribute.Text;
+  };
+}
+
 export interface SharedSeo extends Struct.ComponentSchema {
   collectionName: 'components_shared_seos';
   info: {
@@ -62,14 +72,15 @@ export interface SharedMedia extends Struct.ComponentSchema {
   };
 }
 
-export interface PaneVision extends Struct.ComponentSchema {
+export interface PaneVisions extends Struct.ComponentSchema {
   collectionName: 'components_pane_visions';
   info: {
-    displayName: 'vision';
+    displayName: 'visions';
+    description: '';
   };
   attributes: {
     title: Schema.Attribute.String;
-    description: Schema.Attribute.RichText;
+    text: Schema.Attribute.Component<'shared.short-text', true>;
   };
 }
 
@@ -95,14 +106,14 @@ export interface PaneService extends Struct.ComponentSchema {
   };
 }
 
-export interface PaneMission extends Struct.ComponentSchema {
+export interface PaneMissions extends Struct.ComponentSchema {
   collectionName: 'components_pane_missions';
   info: {
-    displayName: 'mission';
+    displayName: 'missions';
   };
   attributes: {
     title: Schema.Attribute.String;
-    description: Schema.Attribute.RichText;
+    text: Schema.Attribute.Component<'shared.short-text', true>;
   };
 }
 
@@ -115,30 +126,6 @@ export interface PaneBenefitPane extends Struct.ComponentSchema {
     Title: Schema.Attribute.String;
     Icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     Reasons: Schema.Attribute.RichText;
-  };
-}
-
-export interface DyobSlide extends Struct.ComponentSchema {
-  collectionName: 'components_dyob_slides';
-  info: {
-    displayName: 'slide';
-    description: '';
-  };
-  attributes: {
-    First_short_text: Schema.Attribute.String;
-    Last_short_text: Schema.Attribute.String;
-    Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-  };
-}
-
-export interface DyobReview extends Struct.ComponentSchema {
-  collectionName: 'components_dyob_reviews';
-  info: {
-    displayName: 'Review';
-  };
-  attributes: {
-    view_url: Schema.Attribute.String;
-    Title: Schema.Attribute.String;
   };
 }
 
@@ -189,25 +176,50 @@ export interface CardBusinessCard extends Struct.ComponentSchema {
   };
 }
 
+export interface DyobSlide extends Struct.ComponentSchema {
+  collectionName: 'components_dyob_slides';
+  info: {
+    displayName: 'slide';
+    description: '';
+  };
+  attributes: {
+    First_short_text: Schema.Attribute.String;
+    Last_short_text: Schema.Attribute.String;
+    Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface DyobReview extends Struct.ComponentSchema {
+  collectionName: 'components_dyob_reviews';
+  info: {
+    displayName: 'Review';
+  };
+  attributes: {
+    view_url: Schema.Attribute.String;
+    Title: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'shared.slider': SharedSlider;
+      'shared.short-text': SharedShortText;
       'shared.seo': SharedSeo;
       'shared.rich-text': SharedRichText;
       'shared.quote': SharedQuote;
       'shared.media': SharedMedia;
-      'pane.vision': PaneVision;
+      'pane.visions': PaneVisions;
       'pane.step': PaneStep;
       'pane.service': PaneService;
-      'pane.mission': PaneMission;
+      'pane.missions': PaneMissions;
       'pane.benefit-pane': PaneBenefitPane;
-      'dyob.slide': DyobSlide;
-      'dyob.review': DyobReview;
       'card.why-choosing-card': CardWhyChoosingCard;
       'card.solution': CardSolution;
       'card.location': CardLocation;
       'card.business-card': CardBusinessCard;
+      'dyob.slide': DyobSlide;
+      'dyob.review': DyobReview;
     }
   }
 }

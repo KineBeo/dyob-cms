@@ -1,15 +1,18 @@
 {
   "collectionName": "components_pane_visions",
   "info": {
-    "displayName": "vision"
+    "displayName": "visions",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "title": {
       "type": "string"
     },
-    "description": {
-      "type": "richtext"
+    "text": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.short-text"
     }
   }
 }
