@@ -61,7 +61,7 @@
     "missions": {
       "displayName": "missions",
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "component": "pane.missions"
     }
   }
