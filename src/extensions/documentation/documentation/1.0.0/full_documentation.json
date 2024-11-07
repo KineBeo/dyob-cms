@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-11-07T03:51:16.882Z"
+    "x-generation-date": "2024-11-07T08:36:41.076Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -6500,13 +6500,16 @@
                   "example": "string or id"
                 }
               },
-              "mission": {
-                "type": "string"
-              },
               "visons": {
                 "type": "array",
                 "items": {
                   "$ref": "#/components/schemas/PaneVisionComponent"
+                }
+              },
+              "missions": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/PaneMissionComponent"
                 }
               },
               "locale": {
@@ -7322,13 +7325,16 @@
               }
             }
           },
-          "mission": {
-            "type": "string"
-          },
           "visons": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/PaneVisionComponent"
+            }
+          },
+          "missions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PaneMissionComponent"
             }
           },
           "createdAt": {
@@ -7658,13 +7664,16 @@
                     }
                   }
                 },
-                "mission": {
-                  "type": "string"
-                },
                 "visons": {
                   "type": "array",
                   "items": {
                     "$ref": "#/components/schemas/PaneVisionComponent"
+                  }
+                },
+                "missions": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PaneMissionComponent"
                   }
                 },
                 "createdAt": {
@@ -7735,6 +7744,20 @@
         }
       },
       "PaneVisionComponent": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      },
+      "PaneMissionComponent": {
         "type": "object",
         "properties": {
           "id": {

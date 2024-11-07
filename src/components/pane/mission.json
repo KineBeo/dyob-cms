@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_pane_missions",
+  "info": {
+    "displayName": "mission"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    }
+  }
+}

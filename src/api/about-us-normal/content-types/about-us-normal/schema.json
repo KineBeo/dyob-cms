@@ -49,14 +49,17 @@
         "audios"
       ]
     },
-    "mission": {
-      "type": "text"
-    },
     "visons": {
       "displayName": "vision",
       "type": "component",
       "repeatable": true,
       "component": "pane.vision"
+    },
+    "missions": {
+      "displayName": "mission",
+      "type": "component",
+      "repeatable": true,
+      "component": "pane.mission"
     }
   }
 }

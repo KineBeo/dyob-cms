@@ -95,6 +95,17 @@ export interface PaneService extends Struct.ComponentSchema {
   };
 }
 
+export interface PaneMission extends Struct.ComponentSchema {
+  collectionName: 'components_pane_missions';
+  info: {
+    displayName: 'mission';
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+    description: Schema.Attribute.RichText;
+  };
+}
+
 export interface PaneBenefitPane extends Struct.ComponentSchema {
   collectionName: 'components_pane_benefit_panes';
   info: {
@@ -189,6 +200,7 @@ declare module '@strapi/strapi' {
       'pane.vision': PaneVision;
       'pane.step': PaneStep;
       'pane.service': PaneService;
+      'pane.mission': PaneMission;
       'pane.benefit-pane': PaneBenefitPane;
       'dyob.slide': DyobSlide;
       'dyob.review': DyobReview;
