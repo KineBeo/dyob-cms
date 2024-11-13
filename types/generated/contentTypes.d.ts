@@ -741,6 +741,9 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
     Review: Schema.Attribute.Component<'dyob.review', true>;
     Services_title: Schema.Attribute.String;
     services_content: Schema.Attribute.Component<'pane.service', true>;
+    Mobile_hero_section_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;

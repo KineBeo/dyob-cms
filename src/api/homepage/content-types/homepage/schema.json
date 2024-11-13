@@ -80,6 +80,16 @@
       "type": "component",
       "repeatable": true,
       "component": "pane.service"
+    },
+    "Mobile_hero_section_image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
