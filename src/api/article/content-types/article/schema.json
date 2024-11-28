@@ -13,7 +13,8 @@
   "pluginOptions": {},
   "attributes": {
     "name": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "title": {
       "type": "text"
@@ -37,7 +38,8 @@
     },
     "seoUrl": {
       "type": "uid",
-      "targetField": "name"
+      "targetField": "name",
+      "required": true
     }
   }
 }

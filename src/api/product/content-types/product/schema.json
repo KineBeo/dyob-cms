@@ -48,7 +48,8 @@
     },
     "slug": {
       "type": "uid",
-      "targetField": "Name"
+      "targetField": "Name",
+      "required": true
     },
     "category": {
       "type": "relation",

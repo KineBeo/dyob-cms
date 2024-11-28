@@ -603,12 +603,12 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    name: Schema.Attribute.String;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
     title: Schema.Attribute.Text;
     quote: Schema.Attribute.Text;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     content: Schema.Attribute.RichText;
-    seoUrl: Schema.Attribute.UID<'name'>;
+    seoUrl: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -636,7 +636,7 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    name: Schema.Attribute.String;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -864,7 +864,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
       true
     >;
     Product_details: Schema.Attribute.RichText;
-    slug: Schema.Attribute.UID<'Name'>;
+    slug: Schema.Attribute.UID<'Name'> & Schema.Attribute.Required;
     category: Schema.Attribute.Relation<'oneToOne', 'api::category.category'>;
     stock: Schema.Attribute.Integer;
     createdAt: Schema.Attribute.DateTime;
