@@ -57,7 +57,9 @@
       "target": "api::category.category"
     },
     "stock": {
-      "type": "integer"
+      "type": "integer",
+      "default": 0,
+      "min": 0
     }
   }
 }

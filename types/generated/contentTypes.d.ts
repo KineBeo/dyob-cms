@@ -609,6 +609,7 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     content: Schema.Attribute.RichText;
     seoUrl: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
+    topic: Schema.Attribute.Relation<'oneToOne', 'api::topic.topic'>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -866,7 +867,14 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     Product_details: Schema.Attribute.RichText;
     slug: Schema.Attribute.UID<'Name'> & Schema.Attribute.Required;
     category: Schema.Attribute.Relation<'oneToOne', 'api::category.category'>;
-    stock: Schema.Attribute.Integer;
+    stock: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<0>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -879,6 +887,34 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::product.product'
     >;
+  };
+}
+
+export interface ApiTopicTopic extends Struct.CollectionTypeSchema {
+  collectionName: 'topics';
+  info: {
+    singularName: 'topic';
+    pluralName: 'topics';
+    displayName: 'Topic';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    description: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::topic.topic'>;
   };
 }
 
@@ -1269,6 +1305,7 @@ declare module '@strapi/strapi' {
       'api::logo.logo': ApiLogoLogo;
       'api::payment.payment': ApiPaymentPayment;
       'api::product.product': ApiProductProduct;
+      'api::topic.topic': ApiTopicTopic;
       'admin::permission': AdminPermission;
       'admin::user': AdminUser;
       'admin::role': AdminRole;

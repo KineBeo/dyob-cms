@@ -40,6 +40,11 @@
       "type": "uid",
       "targetField": "name",
       "required": true
+    },
+    "topic": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::topic.topic"
     }
   }
 }
